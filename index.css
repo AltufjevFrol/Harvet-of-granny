@@ -25,19 +25,55 @@ section.veg {
 	overflow: hidden;
 	display: inline-block;
 	white-space: nowrap;
-
+	transition: margin-left 2s cubic-bezier(.36,.01,.37,1.52);
 	outline: 1px red dashed;
+}
+
+input[name="botton"] {
+	display: none;
 }
 
 nav {
-	margin-top: 25px;	
-	outline: 1px red dashed;
-}
-
-form {
-	width: 200px;
+	margin-top: 10px;
+	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-
+	text-align: center;
 	outline: 1px red dashed;
 }
+
+label {
+display: inline-block;
+
+width: 25px;
+height: 25px;
+border-radius: 50%;
+border: 1px solid blue;
+outline: 1px red dashed;
+}
+
+#piece1:checked ~ nav label:nth-child(1)
+{background-color: blue;}
+#piece2:checked ~ nav label:nth-child(2)
+{background-color: blue;}
+#piece3:checked ~ nav label:nth-child(3)
+{background-color: blue;}
+#piece4:checked ~ nav label:nth-child(4)
+{background-color: blue;}
+#piece5:checked ~ nav label:nth-child(5)
+{background-color: blue;}
+#piece6:checked ~ nav label:nth-child(6)
+{background-color: blue;}
+
+#piece1:checked ~ #veg1
+{margin-left:0}
+#piece2:checked ~ #veg1
+{margin-left: -75.6%}
+#piece3:checked ~ #veg1
+{margin-left: -151.3%}
+#piece4:checked ~ #veg1
+{margin-left: -227.2%}
+#piece5:checked ~ #veg1
+{margin-left: -302.8%}
+#piece6:checked ~ #veg1
+{margin-left: -378.6%}
