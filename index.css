@@ -1,62 +1,80 @@
 body {
 	margin:0;
 	padding: 0;
+	height: 100%;
 }
-
+/*это окно слайдера*/
 main {
+	box-sizing: border-box;
 	position: relative;
 	width: 95%;
-	height: 50%;
+	height: 1000px;
 	overflow: hidden;
-	margin-top:50px;
+	margin-top:5%;
 	margin-left: auto;
 	margin-right: auto;
 	border: 1px solid transparent;
-	padding-left: 0;
+	padding: 5%;
 	outline: 1px red dashed;
 }
-
+/*элемент обертка карточек который прокручивается*/
 .wrap {
 	width: 2000%;
+	height: 50%;
 	margin: 0;
+	padding:0;
 	transition: margin-left 1s cubic-bezier(.36,.01,.37,1.52);
 }
-
+/*это карточки с фото*/
 section.veg {
-	position: relative;
 	box-sizing: border-box;
 	width: 1.25%;
-	height: 500px;
+	height: 100%;
+	padding: 5px 10px;
 	float: left;
 	margin: 0;
-	overflow: hidden;	
+	overflow: hidden;
 	outline: 1px red dashed;
 }
 
+figure {
+	margin:0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+	outline: 1px red dashed;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+p {
+	display: none;
+}
+/*это скрытые радио кнопки*/
 input[name="botton"] {
 	display: none;
 }
-
+/*это блок с лайблами для управления слайдером*/
 nav {
-	height: 100%;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
+	clear: left;
+	position: fixed;
+	bottom: 0;
 	text-align: center;
-
+	background: #14FE005D;
 	outline: 1px red dashed;
 }
-
+/*это кнопки управлени я слайдером*/
 label {
 display: inline-block;
-
-width: 25px;
-height: 25px;
+width: 10px;
+height: 10px;
 border-radius: 50%;
 border: 1px solid blue;
-outline: 1px red dashed;
 }
-
+/*здесь написана подсветка кнопок*/
 #piece1:checked ~ nav label:nth-child(1)
 {background-color: blue;}
 #piece2:checked ~ nav label:nth-child(2)
@@ -69,7 +87,7 @@ outline: 1px red dashed;
 {background-color: blue;}
 #piece6:checked ~ nav label:nth-child(6)
 {background-color: blue;}
-
+/*здесь написана прокрутка слайдера*/
 #piece1:checked ~ #wrap
 {margin-left:0}
 #piece2:checked ~ #wrap
@@ -82,3 +100,13 @@ outline: 1px red dashed;
 {margin-left: -300%}
 #piece6:checked ~ #wrap
 {margin-left: -375%}
+
+/*стили по наведению*/
+
+section:hover {
+	position: relative;
+
+	transform: scale(1.1);
+	background: grey;
+	z-index: 2;
+}
