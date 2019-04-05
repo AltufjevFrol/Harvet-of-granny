@@ -1,26 +1,22 @@
 body {
 	margin:0;
 	padding: 0;
-	height: 100%;
 }
 /*это окно слайдера*/
 main {
-	box-sizing: border-box;
 	position: relative;
-	width: 95%;
-	height: 1000px;
+	width: 100%;
 	overflow: hidden;
 	margin-top:5%;
 	margin-left: auto;
 	margin-right: auto;
 	border: 1px solid transparent;
-	padding: 5%;
-	outline: 1px red dashed;
+	padding: 10% 0%;
+
 }
 /*элемент обертка карточек который прокручивается*/
 .wrap {
 	width: 2000%;
-	height: 50%;
 	margin: 0;
 	padding:0;
 	transition: margin-left 1s cubic-bezier(.36,.01,.37,1.52);
@@ -29,12 +25,10 @@ main {
 section.veg {
 	box-sizing: border-box;
 	width: 1.25%;
-	height: 100%;
 	padding: 5px 10px;
 	float: left;
 	margin: 0;
 	overflow: hidden;
-	outline: 1px red dashed;
 }
 
 figure {
@@ -42,7 +36,6 @@ figure {
 	padding: 0;
 	width: 100%;
 	text-align: center;
-	outline: 1px red dashed;
 }
 
 img {
@@ -50,9 +43,7 @@ img {
 	max-height: 100%;
 }
 
-p {
-	display: none;
-}
+
 /*это скрытые радио кнопки*/
 input[name="botton"] {
 	display: none;
@@ -60,11 +51,8 @@ input[name="botton"] {
 /*это блок с лайблами для управления слайдером*/
 nav {
 	clear: left;
-	position: fixed;
-	bottom: 0;
+	margin-top:25%;
 	text-align: center;
-	background: #14FE005D;
-	outline: 1px red dashed;
 }
 /*это кнопки управлени я слайдером*/
 label {
@@ -72,21 +60,21 @@ display: inline-block;
 width: 10px;
 height: 10px;
 border-radius: 50%;
-border: 1px solid blue;
+border: 1px solid #000000FF;
 }
 /*здесь написана подсветка кнопок*/
 #piece1:checked ~ nav label:nth-child(1)
-{background-color: blue;}
+{background-color: #969696FF;}
 #piece2:checked ~ nav label:nth-child(2)
-{background-color: blue;}
+{background-color: #969696FF;}
 #piece3:checked ~ nav label:nth-child(3)
-{background-color: blue;}
+{background-color: #969696FF;}
 #piece4:checked ~ nav label:nth-child(4)
-{background-color: blue;}
+{background-color: #969696FF;}
 #piece5:checked ~ nav label:nth-child(5)
-{background-color: blue;}
+{background-color: #969696FF;}
 #piece6:checked ~ nav label:nth-child(6)
-{background-color: blue;}
+{background-color: #969696FF;}
 /*здесь написана прокрутка слайдера*/
 #piece1:checked ~ #wrap
 {margin-left:0}
@@ -102,11 +90,124 @@ border: 1px solid blue;
 {margin-left: -375%}
 
 /*стили по наведению*/
-
 section:hover {
-	position: relative;
-
 	transform: scale(1.1);
-	background: grey;
-	z-index: 2;
+	transition: transform 0.3s cubic-bezier(.32,.79,.63,1.74);
+	background: #E8E8E8FF;
+	box-shadow: 0px 15px 16px -4px rgba(196,196,196,1);
+}
+
+/*модальные окна*/
+div.mod {
+	box-sizing: border-box;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	z-index: 5;
+	width: 90%;
+	height: 90%;
+	background: #5D79A1D7;
+	border-radius: 10px;
+	padding: 5%;
+	display: none;
+}
+
+div.mod:target {
+	display: block;
+}
+a.close {
+	display: block;
+	box-sizing: border-box;
+	position:absolute;
+	right: 2%;
+	top: 2%;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: #293546FF;
+	text-align: center;
+	padding-top: 25px;
+	font-size: 25px;
+	text-decoration: none;
+	color: white;
+}
+
+div.pic {
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 60%;
+	height: 60%;
+	margin: 10% 20%;
+	
+}
+
+.mod p {
+	color: white;
+	position: absolute;
+	bottom: 0;
+
+}
+
+/*картинки*/
+#window1 div.pic {
+	background: url(img/1.png) center center no-repeat;
+}
+#window2 div.pic {
+	background: url(img/2.jpg) center center no-repeat;
+}
+#window3 div.pic {
+	background: url(img/3.jpg) center center no-repeat;
+}
+#window4 div.pic {
+	background: url(img/4.jpg) center center no-repeat;
+}
+#window5 div.pic {
+	background: url(img/5.jpg) center center no-repeat;
+}
+#window6 div.pic {
+	background: url(img/6.jpg) center center no-repeat;
+}
+#window7 div.pic {
+	background: url(img/7.jpg) center center no-repeat;
+}
+#window8 div.pic {
+	background: url(img/8.jpg) center center no-repeat;
+}
+#window9 div.pic {
+	background: url(img/9.png) center center no-repeat;
+}
+#window10 div.pic {
+	background: url(img/10.jpg) center center no-repeat;
+}
+#window11 div.pic {
+	background: url(img/1.jpg) center center no-repeat;
+}
+#window12 div.pic {
+	background: url(img/2.jpg) center center no-repeat;
+}
+#window13 div.pic {
+	background: url(img/3.jpg) center center no-repeat;
+}
+#window14 div.pic {
+	background: url(img/4.jpg) center center no-repeat;
+}
+#window15 div.pic {
+	background: url(img/5.jpg) center center no-repeat;
+}
+#window16 div.pic {
+	background: url(img/6.jpg) center center no-repeat;
+}
+#window17 div.pic {
+	background: url(img/7.jpg) center center no-repeat;
+}
+#window18 div.pic {
+	background: url(img/8.jpg) center center no-repeat;
+}
+#window19 div.pic {
+	background: url(img/9.png) center center no-repeat;
+}
+#window20 div.pic {
+	background: url(img/10.jpg) center center no-repeat;
 }
